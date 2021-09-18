@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394306780381",
+    "project_id": "edhub-26357",
+    "storage_bucket": "edhub-26357.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394306780381:android:4eef4b7402f15ed76f2f34",
+        "android_client_info": {
+          "package_name": "com.edhub.htn2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394306780381-lrdn6ebsq9msraab2tptc8rcd6r7580u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX15lmhThU1sXEqdyqfXx1MuUYp9l81Ic"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394306780381-lrdn6ebsq9msraab2tptc8rcd6r7580u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
