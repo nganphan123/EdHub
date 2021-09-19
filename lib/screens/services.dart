@@ -52,7 +52,7 @@ class _ServiceScreenState extends State<ServiceScreen>
       bottomNavigationBar: ConvexAppBar(
         items: icons.map((icon) => TabItem(icon: icon)).toList(),
         backgroundColor: mediumBlue,
-        height: 65.0,
+        height: 53.0,
         elevation: 0,
         style: TabStyle.reactCircle,
         controller: _tabController,
