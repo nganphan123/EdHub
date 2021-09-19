@@ -22,12 +22,20 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => UserModal(),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'EduHub',
         theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: TextTheme(
-              bodyText2: bodyText2,
-            )),
+          primarySwatch: Colors.blue,
+          fontFamily: mainFontFamily,
+          textTheme: TextTheme(
+            bodyText2: bodyText2,
+            bodyText1: bodyText1,
+            headline5: headline5,
+            headline6: headline6,
+            button: buttonText,
+            subtitle1: subtitle1,
+            subtitle2: subtitle2,
+          ),
+        ),
         home: ServiceScreen(),
         routes: <String, WidgetBuilder>{
           "/person_contact": (_) => PersonalContactPage(),
