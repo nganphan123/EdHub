@@ -52,14 +52,15 @@ class _UploadDialogState extends State<UploadDialog> {
             TextButton(
               onPressed: handleOnPressed,
               style: TextButton.styleFrom(
-                  backgroundColor: darkBlue,
-                  primary: white,
-                  textStyle: buttonText,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  )),
+                backgroundColor: darkBlue,
+                primary: white,
+                textStyle: buttonText,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+              ),
               child: Text("Browse files"),
             ),
             Spacer(flex: 2),
@@ -261,5 +262,64 @@ class _UploadDialogState extends State<UploadDialog> {
         }),
       );
     });
+  }
+}
+
+class CongratsDialog extends StatelessWidget {
+  const CongratsDialog({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Material(
+          color: Color(0x00000000),
+          child: Container(
+            height: 300,
+            width: 500,
+            decoration: BoxDecoration(
+              color: lightBlue,
+              borderRadius: BorderRadius.circular(18.0),
+              border: Border.all(color: darkBlue, width: 4.0),
+            ),
+            child: Stack(
+              children: [
+                IconButton(
+                  onPressed: () => Navigator.of(context).pop(false),
+                  iconSize: 30,
+                  icon: Icon(Icons.close),
+                ),
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Congraduations",
+                        style: headline5.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30.0,
+                          color: noSoDarkBlue,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          "We are so proud of you and wish you all the best for your future!",
+                          textAlign: TextAlign.center,
+                          style: subtitle1.copyWith(color: noSoDarkBlue),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Image.asset("assets/images/congrats_emoji.png")
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
