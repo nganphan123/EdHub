@@ -150,7 +150,10 @@ class Uploadbuttons extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Icon(Icons.cloud_download),
+                Icon(
+                  Icons.cloud_upload,
+                  color: darkBlue,
+                ),
                 SizedBox(width: 10),
                 Expanded(
                   child: Text(

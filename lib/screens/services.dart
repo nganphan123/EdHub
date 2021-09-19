@@ -8,7 +8,7 @@ import 'unsupported.dart';
 const List<IconData> icons = [
   Icons.home,
   Icons.school,
-  Icons.list,
+  Icons.summarize,
   Icons.person,
 ];
 
