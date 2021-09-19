@@ -69,7 +69,8 @@ class ProfileView extends StatelessWidget {
           ),
           SizedBox(height: 25),
           SectionEditButton(
-            onPressed: () {},
+            onPressed: () =>
+                Navigator.of(context).pushNamed("/academic_background"),
             sectionName: sections[1],
           ),
           SizedBox(height: 25),
