@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/buttons.dart';
 import 'package:htn2021/onboarding/login.dart';
+import 'package:htn2021/onboarding/registration.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
 
@@ -35,16 +36,17 @@ class WelcomePage extends StatelessWidget {
                 height: 15,
               ),
               Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis tempus auctor at augue eu eu. Sit lacus cras at fames donec morbi.",
+                "EDhub simplifies the university application process all in one app. When you set up your profile, all you have to do is click a few times and your future is set!",
                 style: subtitle2,
               ),
               SizedBox(
                 height: 20,
               ),
               Button(
-                color: darkGreen,
+                color: darkBlue,
                 text: "Get started",
-                onPressed: null,
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => RegistrationPage())),
               ),
               TextButton(
                 onPressed: () => Navigator.of(context)

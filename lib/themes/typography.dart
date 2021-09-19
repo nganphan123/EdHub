@@ -52,4 +52,4 @@ const TextStyle buttonText = TextStyle(
     fontSize: 25,
     fontWeight: FontWeight.w500,
     letterSpacing: 1.25,
-    color: black);
+    color: white);

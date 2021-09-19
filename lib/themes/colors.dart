@@ -7,7 +7,7 @@ const Color black = Color(0xFF000000);
 // Blue variants
 const Color lightBlue = Color(0xFF9ECBFF);
 const Color mediumBlue = Color(0xFF64A7E4);
-const Color darkBlue = Color(0xFF52A2DC);
+const Color darkBlue = Color(0xFF528DE9);
 const Color pureBlue = Color(0xFF0000ff);
 
 // Green variants
