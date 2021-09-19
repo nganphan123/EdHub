@@ -19,8 +19,8 @@ class _PersonalContactPageState extends State<PersonalContactPage> {
     "Citizenship status*": TextEditingController(),
     "First Language*": TextEditingController(),
     "Preferred Language*": TextEditingController(),
-    "Have your parents attend university/college?*"
-        "Home address*": TextEditingController(),
+    "Have your parents attend university/college?*": TextEditingController(),
+    "Home address*": TextEditingController(),
     "Mailing address (if different from home)": TextEditingController(),
     "Phone Number*": TextEditingController(),
   };
