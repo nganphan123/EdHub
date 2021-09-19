@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:htn2021/components/buttons.dart';
 import 'package:htn2021/components/formFields.dart';
-import 'package:htn2021/onboarding/registration.dart';
+import 'package:htn2021/onboarding/login.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegistrationPage extends StatefulWidget {
+  const RegistrationPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegistrationPageState createState() => _RegistrationPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegistrationPageState extends State<RegistrationPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
@@ -35,8 +35,15 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "We're glad you are back 👋",
+                      "Welcome to EDhub 👋",
                       style: headline5,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "We are so glad to have you join us! Please fill out some basic info below to get started",
+                      style: bodyText2,
                     ),
                     Padding(
                       padding: EdgeInsets.all(10.0),
@@ -64,22 +71,12 @@ class _LoginPageState extends State<LoginPage> {
                       controller: passwordController,
                       validators: RequiredValidator(errorText: "Required"),
                     ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: TextButton(
-                        onPressed: null,
-                        child: Text(
-                          "Forgot password?",
-                          style: TextStyle(color: pureBlue),
-                        ),
-                      ),
-                    ),
                     SizedBox(
-                      height: 10,
+                      height: 50,
                     ),
                     Button(
                       color: mediumBlue,
-                      text: "LOGIN",
+                      text: "ALL DONE",
                       onPressed: () async {
                         setState(() {
                           isLoading = true;
@@ -88,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (_key.currentState!.validate()) {
                           try {
                             await FirebaseAuth.instance
-                                .signInWithEmailAndPassword(
+                                .createUserWithEmailAndPassword(
                               email: emailController.text,
                               password: passwordController.text,
                             );
@@ -106,10 +103,10 @@ class _LoginPageState extends State<LoginPage> {
                         TextButton(
                           onPressed: () => Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (context) => RegistrationPage()),
+                                builder: (context) => LoginPage()),
                           ),
                           child: Text(
-                            "Sign up",
+                            "Login",
                             style: TextStyle(
                                 color: pureBlue, fontWeight: FontWeight.w400),
                           ),
