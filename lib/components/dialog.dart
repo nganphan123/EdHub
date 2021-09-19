@@ -161,7 +161,7 @@ class _UploadDialogState extends State<UploadDialog> {
             ),
             Spacer(),
             TextButton(
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => Navigator.of(context).pop<bool>(true),
               style: TextButton.styleFrom(
                 backgroundColor: darkBlue,
                 primary: white,
@@ -233,7 +233,7 @@ class _UploadDialogState extends State<UploadDialog> {
             child: Stack(
               children: [
                 IconButton(
-                  onPressed: () => Navigator.of(context).pop(),
+                  onPressed: () => Navigator.of(context).pop(false),
                   iconSize: 30,
                   icon: Icon(Icons.close),
                 ),

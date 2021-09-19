@@ -4,7 +4,7 @@ import 'package:htn2021/components/dialog.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
 
-class DocumentUpLoadPage extends StatelessWidget {
+class DocumentUpLoadPage extends StatefulWidget {
   const DocumentUpLoadPage({Key? key}) : super(key: key);
 
   static const List<String> uploadTasks = [
@@ -13,6 +13,14 @@ class DocumentUpLoadPage extends StatelessWidget {
     "Upload unofficial exam results",
     "Upload credential evaluation",
   ];
+
+  @override
+  _DocumentUpLoadPageState createState() => _DocumentUpLoadPageState();
+}
+
+class _DocumentUpLoadPageState extends State<DocumentUpLoadPage> {
+  List<bool> done =
+      List.generate(DocumentUpLoadPage.uploadTasks.length, (index) => false);
 
   @override
   Widget build(BuildContext context) {
@@ -54,22 +62,31 @@ class DocumentUpLoadPage extends StatelessWidget {
                   style: subtitle1,
                 ),
                 SizedBox(height: 30),
-                ...uploadTasks.map(
-                  (task) => Padding(
+                ...List.generate(
+                  DocumentUpLoadPage.uploadTasks.length,
+                  (index) => Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20.0),
                     child: Uploadbuttons(
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return UploadDialog(
-                                  onPressed: () {
-                                    print("Uploading");
-                                  },
-                                );
-                              });
-                        },
-                        title: task),
+                      done: done[index],
+                      onTap: () async {
+                        bool? success = await showDialog<bool>(
+                            context: context,
+                            builder: (context) {
+                              return UploadDialog(
+                                onPressed: () {
+                                  print("Uploading");
+                                },
+                              );
+                            });
+
+                        if (success != null && success) {
+                          setState(() {
+                            done[index] = true;
+                          });
+                        }
+                      },
+                      title: DocumentUpLoadPage.uploadTasks[index],
+                    ),
                   ),
                 ),
                 Padding(

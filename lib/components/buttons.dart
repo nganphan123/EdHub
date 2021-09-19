@@ -148,7 +148,9 @@ class _DetailToggleButtonsState extends State<DetailToggleButtons> {
 class Uploadbuttons extends StatelessWidget {
   final VoidCallback onTap;
   final String title;
-  const Uploadbuttons({Key? key, required this.onTap, required this.title})
+  final bool done;
+  const Uploadbuttons(
+      {Key? key, required this.onTap, required this.title, this.done = false})
       : super(key: key);
 
   @override
@@ -170,8 +172,8 @@ class Uploadbuttons extends StatelessWidget {
             child: Row(
               children: [
                 Icon(
-                  Icons.cloud_upload,
-                  color: darkBlue,
+                  done ? Icons.check : Icons.cloud_upload,
+                  color: done ? darkGreen : darkBlue,
                 ),
                 SizedBox(width: 15),
                 Expanded(
