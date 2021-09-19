@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/buttons.dart';
 import 'package:htn2021/components/text_fields.dart';
+import 'package:provider/provider.dart';
+import '../modal.dart';
 import '../themes/typography.dart';
 import '../themes/colors.dart';
 
@@ -24,6 +26,7 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
 
   @override
   Widget build(BuildContext context) {
+    final userModal = Provider.of<UserModal>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,
@@ -90,7 +93,8 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
               colors: [lightGreen, lightRed],
               callbacks: [
                 () {
-                  print("Finalize Edits");
+                  userModal.updateName(
+                      hintTextsToController["Edit your name"]!.text);
                 },
                 () {
                   print("Log out");

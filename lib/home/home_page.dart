@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/overview_tabs.dart';
+import 'package:htn2021/modal.dart';
 import 'package:htn2021/themes/colors.dart';
+import 'package:provider/provider.dart';
 import '../themes/typography.dart';
 
 class HomePageView extends StatelessWidget {
@@ -8,7 +10,8 @@ class HomePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String fullName = "Jane Doe";
+    final userModal = Provider.of<UserModal>(context);
+    String fullName = userModal.getName();
 
     List<Map<String, dynamic>> uniList = [
       {
