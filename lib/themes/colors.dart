@@ -8,6 +8,7 @@ const Color black = Color(0xFF000000);
 const Color lightBlue = Color(0xFF9ECBFF);
 const Color mediumBlue = Color(0xFF64A7E4);
 const Color darkBlue = Color(0xFF52A2DC);
+const Color soDarkBlue = Color(0xFF002E42);
 
 // Green variants
 const Color lightGreen = Color(0xFFA5DFDF);

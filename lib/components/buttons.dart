@@ -173,11 +173,12 @@ class Uploadbuttons extends StatelessWidget {
                   Icons.cloud_upload,
                   color: darkBlue,
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 15),
                 Expanded(
                   child: Text(
                     title,
-                    style: bodyText1.copyWith(letterSpacing: 0),
+                    style:
+                        bodyText1.copyWith(letterSpacing: 0, color: soDarkBlue),
                   ),
                 ),
               ],
