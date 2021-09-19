@@ -30,9 +30,23 @@ class ProfileView extends StatelessWidget {
               Stack(
                 alignment: Alignment.bottomRight,
                 children: [
-                  CircleAvatar(
-                    radius: 70,
-                    backgroundColor: lightBlue,
+                  // CircleAvatar(
+                  //   radius: 70,
+                  //   backgroundColor: lightBlue,
+                  //   foregroundImage:
+                  //       AssetImage("assets/images/profile_emoji.png"),
+                  // ),
+                  Container(
+                    padding: const EdgeInsets.all(16.0),
+                    width: 160,
+                    height: 160,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: lightBlue,
+                    ),
+                    child: Image.asset(
+                      "assets/images/profile_emoji.png",
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},
