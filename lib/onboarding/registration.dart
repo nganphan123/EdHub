@@ -9,6 +9,8 @@ import 'package:htn2021/databaseService.dart';
 import 'package:htn2021/modal.dart';
 import 'package:htn2021/onboarding/login.dart';
 import 'package:htn2021/onboarding/welcome.dart';
+import 'package:htn2021/profile/profile.dart';
+import 'package:htn2021/screens/services.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
 import 'package:provider/provider.dart';
@@ -133,12 +135,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                     userModal
                                         .updateName(userNameController.text);
                                   });
-
                                   FirebaseFirestore.instance
                                       .collection('students')
                                       .doc(uid)
                                       .set({});
-                                  print(user.uid);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ServiceScreen()));
                                 } on FirebaseAuthException catch (error) {
                                   errorMessage = error.message!;
                                 }

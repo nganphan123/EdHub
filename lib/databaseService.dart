@@ -6,11 +6,11 @@ import 'package:firebase_storage/firebase_storage.dart';
 class DatabaseService {
   final String uid;
   DatabaseService(this.uid);
-  final CollectionReference studentCollection =
-      FirebaseFirestore.instance.collection('students');
 
 //Profile
   Future<void> updateProfile(Map<String, dynamic> data) {
+    final CollectionReference studentCollection =
+        FirebaseFirestore.instance.collection('students');
     // Call the user's CollectionReference to add a new user
     return studentCollection
         .doc(uid)

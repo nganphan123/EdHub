@@ -83,7 +83,7 @@ class _PersonalContactPageState extends State<PersonalContactPage> {
                               primary: white,
                               backgroundColor: mediumBlue,
                             ),
-                            onPressed: () => Navigator.of(context).pop(),
+                            onPressed: () => {Navigator.of(context).pop()},
                             child: Text("All Done"),
                           ),
                         ),

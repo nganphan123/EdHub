@@ -7,6 +7,8 @@ import 'package:htn2021/components/formFields.dart';
 import 'package:htn2021/modal.dart';
 import 'package:htn2021/onboarding/registration.dart';
 import 'package:htn2021/onboarding/welcome.dart';
+import 'package:htn2021/profile/profile.dart';
+import 'package:htn2021/screens/services.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
 import 'package:provider/provider.dart';
@@ -114,6 +116,8 @@ class _LoginPageState extends State<LoginPage> {
                               );
                               User? user = result.user;
                               userModal.updateUid(user!.uid);
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ServiceScreen()));
                               print(user.uid);
                             } on FirebaseAuthException catch (error) {
                               errorMessage = error.message!;
