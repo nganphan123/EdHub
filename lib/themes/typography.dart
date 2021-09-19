@@ -49,7 +49,7 @@ const TextStyle bodyText2 = TextStyle(
 
 const TextStyle buttonText = TextStyle(
     fontFamily: mainFontFamily,
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: FontWeight.w500,
     letterSpacing: 1.25,
     color: white);

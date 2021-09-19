@@ -25,9 +25,9 @@ class _ServiceScreenState extends State<ServiceScreen>
     with SingleTickerProviderStateMixin {
   final List<Widget> serviceScreens = [
     HomePageView(),
-    ProfileView(),
-    ApplicationsView(),
     UnSupportedView(),
+    ApplicationsView(),
+    ProfileView(),
   ];
 
   late final TabController _tabController;
