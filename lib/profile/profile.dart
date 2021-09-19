@@ -64,7 +64,7 @@ class ProfileView extends StatelessWidget {
           ),
           Spacer(flex: 1),
           SectionEditButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pushNamed("/person_contact"),
             sectionName: sections[0],
           ),
           SizedBox(height: 25),
