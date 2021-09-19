@@ -39,7 +39,6 @@ class AppNote extends StatelessWidget {
                   "To view university website\nclick the logo",
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 5),
                 GestureDetector(
                   onTap: () => launch(info["Link"]),
                   child: Container(

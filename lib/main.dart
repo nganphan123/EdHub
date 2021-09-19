@@ -9,6 +9,8 @@ import 'package:htn2021/themes/typography.dart';
 import 'package:htn2021/modal.dart';
 import 'package:provider/provider.dart';
 
+import 'finalization/uploadPage.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
           "/academic_background": (_) => AcademicBackgroundPage(),
           "/documents": (_) => DocumentUpLoadPage(),
           "/profile_edit": (_) => ProfileEditPage(),
+          "/upload_submit": (_) => UploadPage()
         },
       ),
     );
