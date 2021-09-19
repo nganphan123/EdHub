@@ -19,4 +19,5 @@ const Color lightGrey = Color(0xFFF6F6F6);
 const Color darkGrey = Color(0xFF847878);
 
 // Red variants
+const Color lightRed = Color(0xFFDFA8A5);
 const Color mediumRed = Color(0xFFB00020);

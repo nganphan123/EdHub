@@ -6,8 +6,10 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final double verticalMargin;
   final TextEditingController controller;
+  final bool shouldCenter;
   const CustomTextField({
     Key? key,
+    this.shouldCenter = false,
     required this.hintText,
     required this.controller,
     this.verticalMargin = 10.0,
@@ -20,6 +22,7 @@ class CustomTextField extends StatelessWidget {
       child: TextField(
         cursorColor: black,
         controller: controller,
+        textAlign: shouldCenter ? TextAlign.center : TextAlign.start,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: bodyText2.copyWith(color: darkGrey),

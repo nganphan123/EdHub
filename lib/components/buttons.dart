@@ -68,8 +68,19 @@ class DetailToggleButtons extends StatefulWidget {
   /// The set of choices
   final List<String> choices;
 
+  final List<VoidCallback> callbacks;
+
+  final List<Color> colors;
+
   /// Create a default-style toggle buttons.
-  const DetailToggleButtons({Key? key, required this.choices})
+  const DetailToggleButtons(
+      {Key? key,
+      required this.choices,
+      this.callbacks = const [],
+      this.colors = const [
+        darkGreen,
+        lightGreen,
+      ]})
       : assert(choices.length > 0),
         super(key: key);
 
@@ -98,9 +109,13 @@ class _DetailToggleButtonsState extends State<DetailToggleButtons> {
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16.0)),
-            minimumSize: const Size.fromHeight(60.0),
+            minimumSize: const Size.fromHeight(50.0),
             primary: black,
-            backgroundColor: _isSelected[index] ? darkGreen : lightGreen,
+            backgroundColor: widget.callbacks.isNotEmpty
+                ? widget.colors[index]
+                : _isSelected[index]
+                    ? darkGreen
+                    : lightGreen,
           ),
           onPressed: () {
             setState(() {
@@ -108,6 +123,10 @@ class _DetailToggleButtonsState extends State<DetailToggleButtons> {
                 _isSelected[i] = i == index;
               }
             });
+
+            if (widget.callbacks.isNotEmpty) {
+              widget.callbacks[index]();
+            }
           },
           child: Text(
             widget.choices[index],

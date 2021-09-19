@@ -51,6 +51,7 @@ class ProfileView extends StatelessWidget {
                   IconButton(
                     onPressed: () {},
                     tooltip: "Edit avatar",
+                    color: darkBlue,
                     icon: Icon(Icons.add_a_photo),
                   )
                 ],
@@ -68,7 +69,8 @@ class ProfileView extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     ProfileEditButton(
-                      onPressed: () {},
+                      onPressed: () =>
+                          Navigator.of(context).pushNamed("/profile_edit"),
                       title: "Edit Profile",
                     ),
                   ],

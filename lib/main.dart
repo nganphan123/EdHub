@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:htn2021/profile/academic.dart';
 import 'package:htn2021/profile/contact.dart';
 import 'package:htn2021/profile/documents.dart';
+import 'package:htn2021/profile/profile_edit.dart';
 import 'package:htn2021/screens/services.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         "/person_contact": (_) => PersonalContactPage(),
         "/academic_background": (_) => AcademicBackgroundPage(),
         "/documents": (_) => DocumentUpLoadPage(),
+        "/profile_edit": (_) => ProfileEditPage(),
       },
     );
   }
