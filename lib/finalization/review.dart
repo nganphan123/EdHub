@@ -47,6 +47,7 @@ class _ReviewPageState extends State<ReviewPage> {
                       style: subtitle2,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image(
                           image: AssetImage("assets/images/step3.png"),

@@ -48,6 +48,7 @@ class _UploadPageState extends State<UploadPage> {
                       style: subtitle2,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image(
                           image: AssetImage("assets/images/step2.png"),
