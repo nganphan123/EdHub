@@ -1,6 +1,6 @@
-# htn2021
+# EDhub
 
-A Flutter application for university application
+A Flutter application for easing the experience of canadian university applications
 
 ## Getting Started
 
