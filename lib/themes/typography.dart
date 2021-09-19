@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:htn2021/themes/colors.dart';
 
 // Font families
 const String mainFontFamily = "Roboto";
@@ -8,7 +9,7 @@ const String mainFontFamily = "Roboto";
 const TextStyle headline5 = TextStyle(
   fontFamily: mainFontFamily,
   fontSize: 24,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.bold,
 );
 
 const TextStyle headline6 = TextStyle(
@@ -47,8 +48,8 @@ const TextStyle bodyText2 = TextStyle(
 );
 
 const TextStyle buttonText = TextStyle(
-  fontFamily: mainFontFamily,
-  fontSize: 14,
-  fontWeight: FontWeight.w500,
-  letterSpacing: 1.25,
-);
+    fontFamily: mainFontFamily,
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 1.25,
+    color: white);
