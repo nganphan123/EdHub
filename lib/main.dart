@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:htn2021/onboarding/login.dart';
+import 'package:htn2021/onboarding/welcome.dart';
 import 'package:htn2021/profile/academic.dart';
 import 'package:htn2021/profile/contact.dart';
 import 'package:htn2021/profile/documents.dart';
@@ -38,8 +40,8 @@ class MyApp extends StatelessWidget {
             subtitle2: subtitle2,
           ),
         ),
-        home: ServiceScreen(),
         routes: <String, WidgetBuilder>{
+          "/": (_) => WelcomePage(),
           "/person_contact": (_) => PersonalContactPage(),
           "/academic_background": (_) => AcademicBackgroundPage(),
           "/documents": (_) => DocumentUpLoadPage(),
