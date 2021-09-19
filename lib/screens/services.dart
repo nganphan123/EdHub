@@ -55,6 +55,7 @@ class _ServiceScreenState extends State<ServiceScreen>
         elevation: 0,
         style: TabStyle.reactCircle,
         controller: _tabController,
+        disableDefaultTabController: true,
       ),
     );
   }
