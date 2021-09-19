@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/buttons.dart';
+import 'package:htn2021/components/dialog.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
 
@@ -56,7 +57,19 @@ class DocumentUpLoadPage extends StatelessWidget {
                 ...uploadTasks.map(
                   (task) => Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20.0),
-                    child: Uploadbuttons(onTap: () {}, title: task),
+                    child: Uploadbuttons(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return UploadDialog(
+                                  onPressed: () {
+                                    print("Uploading");
+                                  },
+                                );
+                              });
+                        },
+                        title: task),
                   ),
                 ),
                 Padding(

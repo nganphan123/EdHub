@@ -5,7 +5,7 @@ const Color white = Color(0xFFFFFFFF);
 const Color black = Color(0xFF000000);
 
 // Blue variants
-const Color lightBlue = Color(0xFF9ECBFF);
+const Color lightBlue = Color(0xFFD3E3F1);
 const Color mediumBlue = Color(0xFF64A7E4);
 const Color darkBlue = Color(0xFF52A2DC);
 const Color soDarkBlue = Color(0xFF002E42);
