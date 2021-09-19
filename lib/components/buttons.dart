@@ -78,7 +78,7 @@ class DetailToggleButtons extends StatefulWidget {
       required this.choices,
       this.callbacks = const [],
       this.colors = const [
-        darkGreen,
+        mediumBlue,
         lightGreen,
       ]})
       : assert(choices.length > 0),
@@ -114,7 +114,7 @@ class _DetailToggleButtonsState extends State<DetailToggleButtons> {
             backgroundColor: widget.callbacks.isNotEmpty
                 ? widget.colors[index]
                 : _isSelected[index]
-                    ? darkGreen
+                    ? mediumBlue
                     : lightGreen,
           ),
           onPressed: () {
