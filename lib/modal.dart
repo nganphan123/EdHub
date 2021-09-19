@@ -35,13 +35,15 @@ class UserModal with ChangeNotifier {
   // // DatabaseService(this.uid);
 
 //Profile
-  Future<void> updateProfile(Map<String, dynamic> data) {
+  Future<void> updateProfile(Map<String, dynamic> newData) {
     final CollectionReference studentCollection =
         FirebaseFirestore.instance.collection('students');
     // Call the user's CollectionReference to add a new user
+    data = newData;
+    notifyListeners();
     return studentCollection
         .doc(_uid)
-        .update(data)
+        .update(newData)
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
   }

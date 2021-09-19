@@ -102,29 +102,28 @@ class _PersonalContactPageState extends State<PersonalContactPage> {
                               backgroundColor: mediumBlue,
                             ),
                             onPressed: () {
-                              print(userModal.data.toString());
-                              Map<String, dynamic> data = {};
-                              data["legal_name"] =
-                                  hintTextsToController["Legal Name*"]!.text;
-                              data["DOB"] = hintTextsToController[
-                                      "Date of birth (dd/mm/yy)*"]!
-                                  .text;
-                              data["citizenship"] =
-                                  hintTextsToController["Citizenship status*"]!
-                                      .text;
-                              data["firstLang"] =
-                                  hintTextsToController["First Language*"]!
-                                      .text;
-                              data["preferLang"] =
-                                  hintTextsToController["Preferred Language*"]!
-                                      .text;
-                              data["homeAdd"] =
-                                  hintTextsToController["Home address*"]!.text;
-                              data["phoneNum"] =
-                                  hintTextsToController["Phone Number*"]!.text;
+                              Map<String, dynamic> data = {
+                                "legal_name":
+                                    hintTextsToController["Legal Name*"]!.text,
+                                "DOB": hintTextsToController[
+                                        "Date of birth (dd/mm/yy)*"]!
+                                    .text,
+                                "citizenship": hintTextsToController[
+                                        "Citizenship status*"]!
+                                    .text,
+                                "firstLang":
+                                    hintTextsToController["First Language*"]!
+                                        .text,
+                                "preferLang": hintTextsToController[
+                                        "Preferred Language*"]!
+                                    .text,
+                                "homeAdd":
+                                    hintTextsToController["Home address*"]!
+                                        .text,
+                                "phoneNum":
+                                    hintTextsToController["Phone Number*"]!.text
+                              };
                               userModal.updateProfile(data);
-                              print(data["legal_name"]);
-                              print(userModal.data.toString());
                               Navigator.of(context).pop();
                             },
                             child: Text("All Done"),
