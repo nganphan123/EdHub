@@ -125,3 +125,44 @@ class _DetailToggleButtonsState extends State<DetailToggleButtons> {
     );
   }
 }
+
+class Uploadbuttons extends StatelessWidget {
+  final VoidCallback onTap;
+  final String title;
+  const Uploadbuttons({Key? key, required this.onTap, required this.title})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      child: Card(
+        elevation: 6,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        color: lightGrey,
+        margin: const EdgeInsets.symmetric(horizontal: 6.0),
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Icon(Icons.cloud_download),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    title,
+                    style: bodyText1.copyWith(letterSpacing: 0),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
