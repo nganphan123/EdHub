@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:htn2021/home/home_page.dart';
 import 'package:htn2021/themes/colors.dart';
 import '../profile/profile.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -22,7 +23,7 @@ class ServiceScreen extends StatefulWidget {
 class _ServiceScreenState extends State<ServiceScreen>
     with SingleTickerProviderStateMixin {
   final List<Widget> serviceScreens = [
-    UnSupportedView(),
+    HomePageView(),
     ProfileView(),
     UnSupportedView(),
     UnSupportedView(),
