@@ -1,5 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:htn2021/finalization/major_pick.dart';
+import 'package:htn2021/finalization/review.dart';
 import 'package:htn2021/onboarding/login.dart';
 import 'package:htn2021/onboarding/welcome.dart';
 import 'package:htn2021/profile/academic.dart';
@@ -46,7 +48,9 @@ class MyApp extends StatelessWidget {
           "/academic_background": (_) => AcademicBackgroundPage(),
           "/documents": (_) => DocumentUpLoadPage(),
           "/profile_edit": (_) => ProfileEditPage(),
-          "/upload_submit": (_) => UploadPage()
+          "/major_pick": (_) => MajorPickPage(),
+          "/upload_submit": (_) => UploadPage(),
+          "/review": (_) => ReviewPage(),
         },
       ),
     );

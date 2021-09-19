@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/buttons.dart';
-import 'package:htn2021/finalization/review.dart';
+import 'package:htn2021/finalization/uploadPage.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
+import 'package:multiselect/multiselect.dart';
 
 class UploadPage extends StatefulWidget {
   const UploadPage({Key? key}) : super(key: key);
@@ -13,78 +14,89 @@ class UploadPage extends StatefulWidget {
 }
 
 class _UploadPageState extends State<UploadPage> {
+  final List<String> uniList = [
+    "Computer Science",
+    "Mathematics",
+    "Graphic Designs",
+    "Political Science"
+  ];
+
+  List<String> selectedSchools = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10, top: 30),
-                  child: IconButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: black,
-                    ),
+      backgroundColor: white,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32.0),
+        child: ListView(
+          children: [
+            SizedBox(height: 80),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Halfway there 😀",
+                  style: headline5.copyWith(
+                      fontWeight: FontWeight.bold, fontSize: 30.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 10),
+                  child: Text(
+                    "You got this no need to worry! You’re halfway done already.",
+                    textAlign: TextAlign.center,
+                    style: subtitle1,
                   ),
                 ),
-              ),
-              SizedBox(height: 50),
-              Padding(
-                padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      "You're one step away 😀",
-                      style: headline5,
+                    Image(
+                      image: AssetImage("assets/images/step3.png"),
                     ),
-                    Text(
-                      "We are so close to done! These next two steps are really easy and simple.",
-                      style: subtitle2,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          image: AssetImage("assets/images/step2.png"),
-                        ),
-                        Image(
-                          image: AssetImage("assets/images/star.png"),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      "Down below are any additional requirements the universities/programs you chose require that you submit!",
-                      style: subtitle2,
-                    ),
-                    Button(
-                      color: darkBlue,
-                      text: "FirstPick",
-                      onPressed: null,
-                    ),
-                    Button(
-                      color: darkBlue,
-                      text: "FirstPick",
-                      onPressed: null,
-                    ),
-                    Button(
-                      color: darkBlue,
-                      text: "Next step",
-                      onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ReviewPage())),
+                    SizedBox(
+                      height: 160,
+                      width: 160,
+                      child: Image(
+                        image: AssetImage("assets/images/star.png"),
+                      ),
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
+                SizedBox(height: 20),
+                Text(
+                  "Down below are any additional requirements the universities/programs you chose require that you submit!",
+                  textAlign: TextAlign.center,
+                  style: subtitle2,
+                ),
+                SizedBox(height: 20),
+                ...["Upload Resume and cv*", "Upload letter of intent*"]
+                    .map((e) => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Uploadbuttons(
+                            onTap: () {},
+                            title: e,
+                          ),
+                        )),
+                SizedBox(height: 20),
+                Center(
+                  child: TextButton(
+                      style: TextButton.styleFrom(
+                        primary: white,
+                        backgroundColor: mediumBlue,
+                        padding:
+                            EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                      ),
+                      child: Text("Next Step"),
+                      onPressed: () => Navigator.pushNamed(context, "/review")),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

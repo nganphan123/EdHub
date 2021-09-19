@@ -107,7 +107,7 @@ class _UniPickPageState extends State<UniPickPage> {
                       ),
                       child: Text("Next Step"),
                       onPressed: () =>
-                          Navigator.pushNamed(context, "/upload_submit")),
+                          Navigator.pushNamed(context, "/major_pick")),
                 ),
               ],
             ),
