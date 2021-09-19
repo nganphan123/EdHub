@@ -4,6 +4,7 @@ import 'package:htn2021/profile/contact.dart';
 import 'package:htn2021/profile/documents.dart';
 import 'package:htn2021/profile/profile_edit.dart';
 import 'package:htn2021/screens/services.dart';
+import 'package:htn2021/themes/typography.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,8 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(
+            bodyText2: bodyText2,
+          )),
       home: ServiceScreen(),
       routes: <String, WidgetBuilder>{
         "/person_contact": (_) => PersonalContactPage(),

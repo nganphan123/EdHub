@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:htn2021/applications/application_notes.dart';
 import 'package:htn2021/home/home_page.dart';
 import 'package:htn2021/themes/colors.dart';
 import '../profile/profile.dart';
@@ -25,7 +26,7 @@ class _ServiceScreenState extends State<ServiceScreen>
   final List<Widget> serviceScreens = [
     HomePageView(),
     ProfileView(),
-    UnSupportedView(),
+    ApplicationsView(),
     UnSupportedView(),
   ];
 
