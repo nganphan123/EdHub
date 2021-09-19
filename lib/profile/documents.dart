@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/buttons.dart';
 import 'package:htn2021/components/dialog.dart';
+import 'package:htn2021/modal.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
+import 'package:provider/provider.dart';
 
 class DocumentUpLoadPage extends StatefulWidget {
   const DocumentUpLoadPage({Key? key}) : super(key: key);
@@ -24,6 +26,7 @@ class _DocumentUpLoadPageState extends State<DocumentUpLoadPage> {
 
   @override
   Widget build(BuildContext context) {
+    final userModal = Provider.of<UserModal>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,

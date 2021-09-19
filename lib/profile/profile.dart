@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:htn2021/modal.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
+import 'package:provider/provider.dart';
 import '../components/buttons.dart';
 
 class ProfileView extends StatelessWidget {
@@ -19,6 +21,8 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userModal = Provider.of<UserModal>(context);
+    String fullName = userModal.getName();
     return Padding(
       padding: const EdgeInsets.all(32.0),
       child: Column(
@@ -64,7 +68,7 @@ class ProfileView extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "Jane Doe",
+                      fullName,
                       style: headline5.copyWith(fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 10),
