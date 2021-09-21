@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:htn2021/components/text_fields.dart';
+import 'package:htn2021/modal.dart';
 import 'package:htn2021/themes/colors.dart';
 import 'package:htn2021/themes/typography.dart';
+import 'package:provider/provider.dart';
 
 class PersonalContactPage extends StatefulWidget {
   const PersonalContactPage({Key? key}) : super(key: key);
@@ -27,6 +29,22 @@ class _PersonalContactPageState extends State<PersonalContactPage> {
 
   @override
   Widget build(BuildContext context) {
+    final userModal = Provider.of<UserModal>(context);
+    hintTextsToController["Legal Name*"]!.text =
+        userModal.data["legal_name"] ?? "";
+    hintTextsToController["Date of birth (dd/mm/yy)*"]!.text =
+        userModal.data["DOB"] ?? "";
+    hintTextsToController["Citizenship status*"]!.text =
+        userModal.data["citizenship"] ?? "";
+    hintTextsToController["First Language*"]!.text =
+        userModal.data["firstLang"] ?? "";
+    hintTextsToController["Preferred Language*"]!.text =
+        userModal.data["preferLang"] ?? "";
+    hintTextsToController["Home address*"]!.text =
+        userModal.data["homeAdd"] ?? "";
+    hintTextsToController["Phone Number*"]!.text =
+        userModal.data["phoneNum"] ?? "";
+    print(userModal.data.toString());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: white,
@@ -83,7 +101,31 @@ class _PersonalContactPageState extends State<PersonalContactPage> {
                               primary: white,
                               backgroundColor: mediumBlue,
                             ),
-                            onPressed: () => {Navigator.of(context).pop()},
+                            onPressed: () {
+                              Map<String, dynamic> data = {
+                                "legal_name":
+                                    hintTextsToController["Legal Name*"]!.text,
+                                "DOB": hintTextsToController[
+                                        "Date of birth (dd/mm/yy)*"]!
+                                    .text,
+                                "citizenship": hintTextsToController[
+                                        "Citizenship status*"]!
+                                    .text,
+                                "firstLang":
+                                    hintTextsToController["First Language*"]!
+                                        .text,
+                                "preferLang": hintTextsToController[
+                                        "Preferred Language*"]!
+                                    .text,
+                                "homeAdd":
+                                    hintTextsToController["Home address*"]!
+                                        .text,
+                                "phoneNum":
+                                    hintTextsToController["Phone Number*"]!.text
+                              };
+                              userModal.updateProfile(data);
+                              Navigator.of(context).pop();
+                            },
                             child: Text("All Done"),
                           ),
                         ),
