@@ -31,17 +31,19 @@ class UserModal with ChangeNotifier {
     notifyListeners();
   }
 
-  final String uid = "";
-  // DatabaseService(this.uid);
+  // final String uid = "";
+  // // DatabaseService(this.uid);
 
 //Profile
-  Future<void> updateProfile(Map<String, dynamic> data) {
+  Future<void> updateProfile(Map<String, dynamic> newData) {
     final CollectionReference studentCollection =
         FirebaseFirestore.instance.collection('students');
     // Call the user's CollectionReference to add a new user
+    data = newData;
+    notifyListeners();
     return studentCollection
-        .doc(uid)
-        .update(data)
+        .doc(_uid)
+        .update(newData)
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
   }
@@ -53,7 +55,7 @@ class UserModal with ChangeNotifier {
     //   data = snapshot.docs.
     // });
     studentCollection
-        .doc(uid)
+        .doc(_uid)
         .snapshots()
         .listen((DocumentSnapshot documentSnapshot) {
       Map<String, dynamic> firestoreInfo =
@@ -69,7 +71,7 @@ class UserModal with ChangeNotifier {
     final FirebaseStorage storage =
         FirebaseStorage.instanceFor(bucket: "gs://edhub-26357.appspot.com");
     // Create a storage reference from our app
-    var storageRef = storage.ref().child("$uid");
+    var storageRef = storage.ref().child("$_uid");
     try {
       await storageRef.putFile(file);
     } on FirebaseException catch (e) {

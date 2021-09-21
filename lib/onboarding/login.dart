@@ -116,8 +116,10 @@ class _LoginPageState extends State<LoginPage> {
                               );
                               User? user = result.user;
                               userModal.updateUid(user!.uid);
+                              userModal.fetchData();
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => ServiceScreen()));
+
                               print(user.uid);
                             } on FirebaseAuthException catch (error) {
                               errorMessage = error.message!;

@@ -139,6 +139,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       .collection('students')
                                       .doc(uid)
                                       .set({});
+                                  userModal.fetchData();
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
